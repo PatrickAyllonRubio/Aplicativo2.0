@@ -4,13 +4,8 @@ import React, {
   useState
 } from 'react';
 import {
-  Pose,
-  POSE_CONNECTIONS
+  Pose
 } from '@mediapipe/pose';
-import { 
-  drawConnectors,
-  drawLandmarks
-} from '@mediapipe/drawing_utils'
 
 import {
   FontAwesomeIcon
@@ -86,7 +81,7 @@ import shortolgado1A from './imagenes/shortolgado1A.png';
 
 // Accesrios cabeza para el carrusel
 import gorro1 from './imagenes/gorro1.png';
-import gorro2 from './imagenes/gorro2.png';
+import gorro2 from './imagenes/gorro2.png'; 
 import gorro3 from './imagenes/gorro3.png';
 import gorro4 from './imagenes/gorro4.png';
 import gorro5 from './imagenes/gorro5.png';
@@ -111,7 +106,7 @@ import cuellera3A from './imagenes/cuellera3A.png';
 import cuellera4A from './imagenes/cuellera4A.png';
 
 // Calzado
-import zapatos from './imagenes/zapatos1.png';
+//import zapatos from './imagenes/zapatos1.png';
 
 // Logo
 import logo from './imagenes/logo.png';
@@ -141,10 +136,10 @@ const App = () => {
       },
       {
         image: pmangalarga3,
-        name: 'Top 3',
-        tipo: 'polo manga larga',
+        name: 'Top 3',  
+        tipo: 'polo manga larga', 
         precio: 165.00,
-        colores: ['Naranja', 'Verde'],
+        colores: ['Naranja', 'Verde'], 
         tallas: ['S', 'M', 'L'],
         description: 'Polo de manga larga con colores vibrantes para destacar.',
         LB: 'coctel'
@@ -490,9 +485,10 @@ const App = () => {
 
 
     useEffect(() => {
-      document.getElementById('ventana-completa-btn').addEventListener('click', toggleFullscreen);
+      const handleButtonClick = () => toggleFullscreen();
+      document.getElementById('ventana-completa-btn').addEventListener('click', handleButtonClick);
       return () => {
-        document.getElementById('ventana-completa-btn').removeEventListener('click', toggleFullscreen);
+        document.getElementById('ventana-completa-btn').removeEventListener('click', handleButtonClick);
       };
     }, [toggleFullscreen]);
 
@@ -1621,7 +1617,7 @@ const App = () => {
             </div>
           ) : null}
           </div>
-        </div>
+        </div> 
       </div>
     </div>
   );
